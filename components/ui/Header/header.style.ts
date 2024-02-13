@@ -1,13 +1,9 @@
 import { StyleSheet } from "react-native"
-import { colors } from "../../constants/theme"
+import { colors } from "../../../constants/theme"
 
 const styles = () =>
     StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: colors["light"].PURPLE,
-        paddingHorizontal: 10,
-    },
+   
     topIcon: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -67,52 +63,6 @@ const styles = () =>
         fontWeight: 'bold',
         color: colors["light"].PINK,
     },
-
-    /**LIST */
-    homeItemsContainer: {
-        // marginTop: 20,
-        // borderWidth: 1, 
-    },
-
-    contentContainerStyle: {
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'row',
-        gap: 20,
-        paddingVertical: 10,
-      },
-
-    bottomPinkBox: {
-        height: 40,
-        width: '100%',
-        borderRadius: 25,
-        backgroundColor: colors["light"].PINK,
-    },
-
-    bottomWrapper: {
-        position: 'absolute',
-        bottom: 0,
-        width: "100%",
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        gap: 20,
-        padding: 20,
-      },
-    dots: {
-        width: 8,
-        height: 8,
-        borderRadius: 4,
-        backgroundColor: colors["light"].BLUE,
-        shadowColor: "#000",
-            shadowOffset: {
-            width: 0,
-            height: 3,
-            },
-            shadowOpacity: 0.27,
-            shadowRadius: 4.65,
-    }
 })
 
 export default styles

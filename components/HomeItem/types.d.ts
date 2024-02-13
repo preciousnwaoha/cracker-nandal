@@ -5,4 +5,5 @@ export interface HomeItemProps {
     bottomText?: string,
     topIcon?: React.ReactNode,
     bottomIcon?: React.ReactNode,
+    routeName: string
 }

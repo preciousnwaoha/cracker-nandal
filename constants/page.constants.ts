@@ -5,13 +5,13 @@ const PAGE: IPAGE = {
         title: 'Home',
         screen: 'HomeScreen',
     },
-    ABOUT: {
-        title: 'About',
-        screen: 'AboutScreen',
+    EXPLORE: {
+        title: 'Explore',
+        screen: 'ExploreScreen',
     },
-    CONTACT: {
-        title: 'Contact',
-        screen: 'ContactScreen',
+    PROFILE: {
+        title: 'Profile',
+        screen: 'ProfileScreen',
     },
 }
 

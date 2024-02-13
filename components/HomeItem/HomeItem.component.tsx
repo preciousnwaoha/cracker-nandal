@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import styling from './homeItem.style'
 import { FontAwesome6 } from '@expo/vector-icons';
@@ -6,11 +6,15 @@ import { Entypo } from '@expo/vector-icons';
 import { HomeItemProps } from './types';
 import { LinearGradient } from 'expo-linear-gradient';
 import { colors } from '../../constants/theme';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 
 const HomeItem = (props: HomeItemProps) => {
 
-  const { topText, bottomText, topIcon, bottomIcon } = props
+  const navigation = useNavigation()
+  const route = useRoute()
+
+  const { topText, bottomText, topIcon, bottomIcon, routeName } = props
 
   const styles = styling()
 
@@ -29,14 +33,19 @@ const HomeItem = (props: HomeItemProps) => {
             </Text>
         </View>
 
-        <View style={styles.bottomBottomPart}>
-            <View style={styles.bottomIcon}>
+        <TouchableOpacity onPress={() => {
+          (navigation.navigate as any)(routeName || "HomeScreen")
+
+        }} style={styles.bottomBottomPart}>
+            <View style={[styles.bottomIcon, {
+              backgroundColor: routeName === route.name ? colors["light"].BLUE_700 : colors["light"].PINK,
+            }]}>
               {topIcon || <Entypo name="open-book" size={30} color="black" />}
             </View>
             <Text style={styles.bottomTopPartText}>
                 {bottomText || 'Library'}
             </Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </LinearGradient>
   )

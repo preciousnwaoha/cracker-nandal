@@ -4,6 +4,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../screens/HomeScreen';
 import PAGE from '../constants/page.constants';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import ExploreScreen from '../screens/ExploreScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 // import Loading from '../components/ui/Loading/loading.component';
 
@@ -50,6 +52,19 @@ const Navigation = () => {
           name={PAGE.HOME.screen}
           component={HomeScreen}
         />
+
+
+        <HomeStack.Screen
+          name={PAGE.EXPLORE.screen}
+          component={ExploreScreen}
+        />
+
+        <HomeStack.Screen
+          name={PAGE.PROFILE.screen}
+          component={ProfileScreen}
+        />
+
+
 
 
       </RootStack.Navigator>
